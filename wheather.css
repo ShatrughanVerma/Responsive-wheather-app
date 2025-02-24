@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('https://img.freepik.com/free-photo/cloudy-blue-sky_1112-236.jpg?uid=R187587734&ga=GA1.1.1230823910.1729675768&semt=ais_hybrid');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🌍 Container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    padding: 20px 40px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* 🔍 Current Weather */
+.current-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.date-container {
+    font-weight: 100;
+}
+
+.date-container .time {
+    font-size: 50px;
+}
+
+.date-container #am-pm {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.date-container .date {
+    font-size: 20px;
+}
+
+.place-container {
+    text-align: end;
+}
+
+.place-container .time-zone {
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.place-container .country {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* 🌡 Extra Weather Info */
+.current-info .others {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    margin: 10px 0;
+    border: 1px solid #eee;
+}
+
+.current-info .others .weather-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 📅 Future Forecast */
+.future-forecast {
+    background: rgba(24, 24, 27, 0.8);
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    color: white;
+    overflow-x: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.future-forecast .today {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px;
+    padding-right: 30px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.future-forecast .today .day {
+    padding: 5px 15px;
+    background: #3c3c44;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.future-forecast .today .temp {
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.future-forecast .weather-forecast {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.weather-forecast .weather-forecast-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    min-width: 80px;
+}
+
+.weather-forecast .weather-forecast-item .day {
+    padding: 5px 10px;
+    background: #3C3C44;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.weather-forecast .weather-forecast-item .temp {
+    font-size: 12px;
+}
+
+/* ⚠️ Earthquake Alert */
+.earthquake-alert {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* 🔄 Responsive Design */
+@media only screen and (max-width: 730px) {
+    .container {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .future-forecast {
+        justify-content: start;
+        overflow-x: auto;
+    }
+
+    .date-container .time {
+        font-size: 40px;
+    }
+
+    .date-container #am-pm {
+        font-size: 18px;
+    }
+
+    .date-container .date {
+        font-size: 18px;
+    }
+
+    .place-container {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .place-container .time-zone {
+        font-size: 18px;
+    }
+
+    .current-info .others {
+        padding: 10px;
+    }
+
+    .current-info .others .weather-item {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .future-forecast {
+        justify-content: start;
+        overflow-x: auto;
+    }
+}
+/* 🔍 Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-container input {
+    width: 300px;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.search-container input:focus {
+    background: rgba(255, 255, 255, 0.4);
+    width: 320px;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border: none;
+    background: #ffcc00;
+    color: black;
+    border-radius: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #ffdb4d;
+}
+
+/* 🔄 Responsive Search Bar */
+@media (max-width: 768px) {
+    .search-container input {
+        width: 250px;
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .search-container input:focus {
+        width: 270px;
+    }
+
+    .search-container button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+
+/* Small screens ke liye adjustments */
+@media (max-width: 480px) {
+    #suggestion-box {
+        width: 95%;
+        max-width: 250px;
+        font-size: 14px;
+    }
+
+    .suggestion-item {
+        padding: 8px;
+    }
+}
+
+/* Tablet ke liye */
+@media (max-width: 768px) {
+    #suggestion-box {
+        width: 80%;
+    }
+}
